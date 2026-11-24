@@ -1,5 +1,10 @@
 <script setup>
+import { ref } from 'vue';
+import MyButton from './UI/MyButton.vue';
+import MyInput from './UI/MyInput.vue';
 
+
+const name = ref()
 </script>
 
 <template>
@@ -14,6 +19,12 @@
             <p>2. Наведи ее на QR-код</p>
             <p>3. Укажи группу и свое имя</p>
             <p>4. Ожидай начала теста</p>
+        </div>
+
+        <div>
+            <MyButton>Привет</MyButton>
+            <MyInput v-model="name"></MyInput>
+            <p>{{ name }}</p>
         </div>
     </div>
 </template>
