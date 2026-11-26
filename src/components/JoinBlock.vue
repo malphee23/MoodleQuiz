@@ -3,6 +3,7 @@ import { ref, computed } from 'vue';
 import MyButton from './UI/MyButton.vue';
 import MyInput from './UI/MyInput.vue';
 import MySelect from './UI/MySelect.vue';
+import MyCard from './UI/MyCard.vue';
 
 
 const name = ref()
@@ -21,41 +22,140 @@ const selectedAnswerName = computed(() => {
 </script>
 
 <template>
-    <div class="join-block">
-        <MyCard>
+    <MyCard class="join-block">
+        <div class="qr-code-instruction-block">
             <div class="qr-code">
-                <img src="@/images/qr.png" alt="qr-code" width="150" height="150">
+                <img src="@/images/qr.png" alt="qr-code">
             </div>
+            <div class="qr-code-instruction-text">
+                <div class="qr-code-instruction-text-topic">
+                    Инструкция по подключению
+                </div>
+                <div class="qr-code-instruction-text-body">
+                    <ol>
+                        <li>
+                            Открой камеру телефона
+                        </li>
+                        <li>
+                            Наведи на QR-код
+                        </li>
+                        <li>
+                            Выбери свое имя и группу
+                        </li>
+                        <li>
+                            Ожидай начало теста
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="invite-code-block">
+            <div class="invite-code-instruction-text">
+                Или введи этот код ->
+            </div>
+            <div class="invite-code">
+                123 123
+            </div>
+        </div>
 
-            <div class="instruction">
-                <h1>Инструкция по подключению</h1>
-                <p>1. Открой камеру телефона</p>
-                <p>2. Наведи ее на QR-код</p>
-                <p>3. Укажи группу и свое имя</p>
-                <p>4. Ожидай начала теста</p>
-            </div>
 
-            <div>
-                <MyButton>Привет</MyButton>
-                <MyInput v-model="name"></MyInput>
-                <p>{{ name }} ты сделал выбор: {{ selectedAnswerName }}</p>
-            </div>
-
-            <div>
-                <MySelect v-model="selectedAnswer" :options="answers"></MySelect>
-            </div>
-        </MyCard>
-    </div>
+    </MyCard>
 </template>
 
 <style scoped>
-.qr-code {
-    padding: 15px;
+.join-block {}
+
+.qr-code-instruction-block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+
+    padding: clamp(16px, 2vw, 40px);
+    gap: clamp(16px, 2vw, 32px);
 }
 
-.instruction {
-    font-size: 16px;
-    color: darkolivegreen;
-    padding: 15px;
+.invite-code-block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: clamp(16px, 2vw, 40px);
+    gap: clamp(16px, 2vw, 32px);
+}
+
+.invite-code-instruction-text {
+    color: var(--text-color);
+    font-size: clamp(1.25rem, 0.75rem + 1.5vw, 3rem);
+}
+
+.invite-code {
+    color: var(--system-color);
+    font-size: clamp(2rem, 1rem + 3vw, 6rem);
+    white-space: nowrap;
+}
+
+.qr-code {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 45%;
+    min-width: 0;
+}
+
+.qr-code img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.qr-code-instruction-text {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.qr-code-instruction-text-topic {
+    color: var(--system-color);
+    font-size: clamp(2rem, 1rem + 2vw, 5rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.qr-code-instruction-text-body {
+    color: var(--text-color);
+    font-size: clamp(1.25rem, 0.75rem + 1.5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.qr-code-instruction-text-body ol {
+    margin: 0;
+    padding-inline-start: 1.2em;
+}
+
+.qr-code-instruction-text-body li+li {
+    margin-top: 0.4em;
+}
+
+@media (max-width: 800px) {
+    .qr-code-instruction-block {
+        flex-direction: column;
+    }
+
+    .invite-code-block {
+        flex-direction: column;
+    }
+
+    .qr-code {
+        align-self: center;
+        width: 70%;
+        flex: none;
+    }
 }
 </style>
