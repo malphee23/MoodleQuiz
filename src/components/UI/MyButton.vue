@@ -21,16 +21,14 @@
     height: 64px;
     padding: 16px 32px;
 
-    background-color: #c4ff3a;
+    background-color: var(--system-color);
     color: #192019;
 
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
 
     font-size: 22px;
     font-family: inherit;
-
-    cursor: pointer;
 
 }
 

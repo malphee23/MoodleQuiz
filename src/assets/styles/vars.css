@@ -1,0 +1,11 @@
+:root {
+  --back-color: #191d1b;
+  --cards-color: #222824;
+  --border-color: #586259;
+  --system-color: #d2f86a;
+
+  --text-color: #f4f5e9;
+  --text-error-color: #ffad99;
+
+  --font-family: 'Golos Text', sans-serif;
+}
