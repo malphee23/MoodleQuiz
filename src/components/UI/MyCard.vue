@@ -1,5 +1,5 @@
 <script setup>
-
+defineOptions({ name: 'my-card' })
 </script>
 
 <template>

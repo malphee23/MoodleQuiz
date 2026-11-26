@@ -1,12 +1,16 @@
 <script setup>
 const model = defineModel()
 
+defineOptions({ name: 'my-select' })
+
 defineProps({
     options: {
         type: Array,
         default: () => []
     },
 })
+
+
 </script>
 
 <template>

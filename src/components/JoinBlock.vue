@@ -22,7 +22,7 @@ const selectedAnswerName = computed(() => {
 </script>
 
 <template>
-    <MyCard class="join-block">
+    <my-card class="join-block">
         <div class="qr-code-instruction-block">
             <div class="qr-code">
                 <img src="@/images/qr.png" alt="qr-code">
@@ -59,7 +59,7 @@ const selectedAnswerName = computed(() => {
         </div>
 
 
-    </MyCard>
+    </my-card>
 </template>
 
 <style scoped>

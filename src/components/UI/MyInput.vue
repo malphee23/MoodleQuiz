@@ -1,5 +1,7 @@
 <script setup>
 const model = defineModel()
+
+defineOptions({ name: 'my-input' })
 </script>
 
 <template>
