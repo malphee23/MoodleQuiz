@@ -1,10 +1,23 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import MyButton from './UI/MyButton.vue';
 import MyInput from './UI/MyInput.vue';
+import MySelect from './UI/MySelect.vue';
 
 
 const name = ref()
+const selectedAnswer = ref('')
+
+const answers = [
+    { value: 1, name: 'Это верно' },
+    { value: 2, name: 'Это почти верно' },
+    { value: 3, name: 'Это не совсем вверно' },
+    { value: 4, name: 'Это неверно' }
+]
+
+const selectedAnswerName = computed(() => {
+    return answers.find(answer => answer.value === selectedAnswer.value)?.name
+})
 </script>
 
 <template>
@@ -24,14 +37,18 @@ const name = ref()
         <div>
             <MyButton>Привет</MyButton>
             <MyInput v-model="name"></MyInput>
-            <p>{{ name }}</p>
+            <p>{{ name }} ты сделал выбор: {{ selectedAnswerName }}</p>
+        </div>
+
+        <div>
+            <MySelect v-model="selectedAnswer" :options="answers"></MySelect>
         </div>
     </div>
 </template>
 
 <style scoped>
 .join-block {
-    width: 500px;
+    width: 100%;
     height: 300px;
     background-color: darkgrey;
     display: flex;
