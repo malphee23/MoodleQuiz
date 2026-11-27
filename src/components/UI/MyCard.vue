@@ -11,7 +11,7 @@ defineOptions({ name: 'my-card' })
 <style scoped>
 .card {
     width: 100%;
-    min-height: 300px;
+
     background-color: var(--cards-color);
     border: none;
     border-radius: 12px;

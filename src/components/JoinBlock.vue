@@ -1,9 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
-import MyButton from './UI/MyButton.vue';
-import MyInput from './UI/MyInput.vue';
-import MySelect from './UI/MySelect.vue';
-import MyCard from './UI/MyCard.vue';
+
 
 
 const name = ref()

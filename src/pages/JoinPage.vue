@@ -1,6 +1,9 @@
 <script setup>
+import { ref } from 'vue';
+
 import JoinBlock from '@/components/JoinBlock.vue';
 import StudentJoinList from '@/components/StudentJoinList.vue';
+import QuizHeader from '@/components/QuizHeader.vue';
 
 const students = [
     { num: 1, name: 'Вася' },
@@ -21,20 +24,12 @@ const students = [
     { num: 16, name: 'Лера' },
 ]
 
-const testName = 'Бинарное древо поиска'
+const testName = ref('Бинарное древо поиска')
 </script>
 
 <template>
     <div class="main">
-        <header>
-            <div class="logo">
-                [ КВИЗ ]
-            </div>
-
-            <div class="quiz-number">
-                Тест "{{ testName }}"
-            </div>
-        </header>
+        <quiz-header :test-name="testName"></quiz-header>
 
         <div class="top-section">
             <div class="join-call">
@@ -60,9 +55,6 @@ const testName = 'Бинарное древо поиска'
 </template>
 
 <style scoped>
-.main {
-    padding: 20px 50px;
-}
 
 header {
     display: flex;

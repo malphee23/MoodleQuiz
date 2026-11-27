@@ -9,7 +9,7 @@
 <style scoped>
 * {
     margin: 0px;
-    padding: 0px;
+    padding: 2vw 4vw;
     box-sizing: border-box;
 }
 </style>

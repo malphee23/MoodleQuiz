@@ -2,15 +2,22 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import JoinPage from '@/pages/JoinPage.vue'
 import StudentLobbyPage from '@/pages/StudentLobbyPage.vue'
+import StudentInviteCodePage from '@/pages/StudentInviteCodePage.vue'
 
 const routes = [
   {
     path: '/',
     redirect: '/join',
   },
+
   {
     path: '/join',
     component: JoinPage,
+  },
+
+  {
+    path: '/connect',
+    component: StudentInviteCodePage
   },
 
   {

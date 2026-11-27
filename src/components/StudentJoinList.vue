@@ -23,7 +23,7 @@ defineProps({
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-right: 5px;
+    padding-right: 1vw;
 
     max-height: 36vw;
     overflow-y: auto;
